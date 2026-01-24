@@ -33,3 +33,24 @@ ROS - Robot Operating System is an open source system that then companies build 
 ### the workspace - the possible movement range of a robot
 
 Repeatability - a robot never actually repeats the same task in the actual exact position. it is usually off by microns, and so the repeatable accuracy is always a specific number that is determined with each robot to see how accurate it can be
+
+Articulated arm robot - typically 6 axes, and have very little restrictions in movement and thus are very flexible
+Delta/linear arm robot - 3, 4, or 6 axes, and is mainly used for 3D printing
+SCARA (Selective Compliance Assembly Robot Arm) - 2 or 3 rotation and 1 translation axis, and are used often for screwing or sorting on assembly lines
+
+Vertical articulated arm robot 
+ - main axis: the larger arm that provices the positioning and pre-orientation fo the tool (including the base, covers 80-90% of working area
+ - minor axis: the smaller arm that brings the Tool Center Point into the exact position and orientation
+   - main work area: the area close to the arm for optimal accuracy
+   - secondary work area: usually farther away from the center, where the robot must work slowly (less accuracy), and is not as accurate (changing tools)
+
+### TCP (Tool Center Point) - a specific point on the robot's end-effector that the controller treats as THE point whose position and orienation it controls. Robot kinematics don't really care about the whole geometry, but specifically where the TCP lands (and if it's in the exact right spot).
+
+Cell control - the "Brain" that makes all the pars work together (the robot, end effector, sensors, conveyors, PLC's & HMI's, and safety systems)
+ - handles sequencing and logic (workflow)[usually runs on a PLC], communication (manages sigals between controller, PLC, etc), error handling, etc.
+
+### HMI (Human Machine Interace) - USED TO OPERATE AND MONITOR THE PROCESS, AND CONNECTED TO THE CELL CONTROLLER (USED TO CONTROL THE ROBOT ARM)
+
+- The robot controller (PLC) is like the factory foreman, telling the robot what to do... while the robot controller figures out how to do that smoothly and safely
+
+Maximum payload - operates at a reduced speed, but with a maximum supply of "stuff'
