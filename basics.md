@@ -53,4 +53,68 @@ Cell control - the "Brain" that makes all the pars work together (the robot, end
 
 - The robot controller (PLC) is like the factory foreman, telling the robot what to do... while the robot controller figures out how to do that smoothly and safely
 
+### Actuator - a device that converts energy into motion (like the muscle of a robot)
+ - receives a signal (electrical, hydraulic, pneumatic) and produces motion (linear, rotary, or oscillating)
+
 Maximum payload - operates at a reduced speed, but with a maximum supply of "stuff'
+
+kinematics - describes the motion mechanics of a robot
+
+working area - the base, shoulder, and elbow axis (the three main axes)
+the minor axis - encompasses the wrist axes and controls the "the orientation of the end effector"
+
+transitory axes (linear axes) - move up and down, and laterally side to side 
+
+back and forth (x-axis)
+left and right (y-axis)
+up and down (z-axis)
+
+rotation around the x-axis - rolling movement 
+rotation around the y axis - pitching motion
+rotation around the z axis - yaw movement
+
+DOF (Degree of freedom) - connotates the degree of movement 
+  - a door hinge has 1 degree of freedom
+  - a human elbow has 2 degrees of freedom (bending, and also a slight twist)
+
+  - serial kinematics - if at least 3 arm lengths are connected together by axes, it is called a kinematic chain  
+  - parallel kinematics - a mechanical system where the end effector is supported and moved by multiple independent kinematic chains working together, instead of a single chain of joints in a serial robot arm
+
+  - world coordinate system - a cartesian coordinate system with an xyz axis
+     - unchangeable in space
+     - origin: usually it's at the rotation center at the 1st robot axis (at the base)
+     - reference for tool coordinate system
+  - tool coordinate system - cartesian coordinate system with an xyz axis
+     - changeable in space, as it moves together with the tool
+     - source: tool center point (TCP)
+
+Linear and gantry robots use:
+  TTT kinematics - Tilt-Tilt-Translate kinematics
+   - a robot where the end effector is controlled by two tilting (rotational) joints followed by a translational (linear) joint)
+   - good for simple orientation and positioning for tasks like pick-and-place (loading pallets, assembly of workpiece)
+   - work in cuboid or cubic areas
+
+Swivel arm robot
+   - RTT kinematics - Rotation-tilt-tilt
+   - the base rotates
+   - working area is cylindrical
+
+Scara robot
+   - RRT Kinematics - revolute-revolute-translational
+   - two rotation joints and one linear joint
+   - kidney-shaped workspace
+   - good for assembly, drilling, milling, testing
+
+Vertical articulated arm robot
+   - RRR kinematics
+   - working area - hollow sphere
+   - advantage: minimum acceleration forces and space-saving
+   - downside: greater intertial forces
+   - used in welding/painting/assembly/deburring
+
+   - Delta robots
+     - use parallel kinematics
+     - advantages: can move very fast, mechanical stiffness --repeatability, low moving mass (small inertia)
+     - disadvantage: low load capacity, small workspace, coordinating transformation is complex (complex control)
+      - used for packaging, food handling, electronics assembly
+      - fast pick and play tasks
