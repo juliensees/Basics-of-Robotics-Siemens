@@ -118,3 +118,33 @@ Vertical articulated arm robot
      - disadvantage: low load capacity, small workspace, coordinating transformation is complex (complex control)
       - used for packaging, food handling, electronics assembly
       - fast pick and play tasks
+
+HRC - Human-robot collaboration
+
+MABA-MABA - Machines are better at VS Men are better at
+
+Human-Robot Interaction
+Coexistence - when humans and robots are working simultaneously, but in different spaces
+Cooperation - when humans and robots are working in the same space, but different times
+Collaboration - when humans/robots work at the same time and same room
+
+Robot accuracy - 1 micrometer and 1 millimeter accuracy 
+
+Accuracy paramters:
+Positioning error - indicates the deviation between the actual and programmed end points
+Resolution - determines the smallest step a robot can take
+exchange accuracy - the precision with a robot's end-effector when it returns to the same position after a swap-out
+Path accuracy - how closely a robot will follow the entire path exactly the same, and not just repeating the individual target points
+
+Production-related inaccuracy - due to parts of the robot or its software (before installation/application)
+ Issues: - gears/joints have play in them
+         - rounding errors in initial software calculations
+         - sensors have a maximum resolution that create the accuracy. also the coding type of the sensors can limit the maximum possible accuracy
+         - deviations from programming to the actual load
+         - simplified model in the software that eventually leads to innacuracies 
+
+ Operational inaccuracy
+   Issues: - changes in the play over time of mechanical components (like gear boxes)
+           - temperature differences from initial building facility to warehouse
+           - signs of wear and tear
+           - vibration influences from the environment
